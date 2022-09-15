@@ -1,5 +1,12 @@
 import React from 'react'
 
+import Exclui from './icons/lixo.svg'
+
+
+
+
+
+
 const GridItem = ({item, onDelet}) => {
 
   return (
@@ -9,14 +16,17 @@ const GridItem = ({item, onDelet}) => {
         <td alignCenter>
             {item.expense ? (
                
-               <p>Entrada</p>
+               <p className='i'>Entrada</p>
             ) : (
-                <p>Saida</p>
+                <p className='i'>Saida</p>
             )}
 
         </td>
         <td>
-           <button className='btnExclui' onClick={()=> onDelet(item.id)}>Excluir</button>
+           <img src={Exclui}
+           style={ {width: 35, height: 45}} 
+           className='btnExclui'  
+           onClick={()=> onDelet(item.id)}></img>
         </td>
     </tr>
   )
